@@ -1,27 +1,24 @@
-let navbar = document.querySelector('.header .navbar');
+// Mengambil elemen navbar dengan class "header navbar"
+let navbar = document.querySelector(".header .navbar");
 
-document.querySelector('#menu-btn').onclick = () =>{
-  navbar.classList.toggle('active');
-  loginForm.classList.remove('active');
-}
+// Memberikan event click pada tombol dengan id "menu-btn"
+document.querySelector("#menu-btn").onclick = () => {
+  // Tambahkan atau hapus class "active" pada elemen navbar
+  navbar.classList.toggle("active");
+};
 
-let loginForm = document.querySelector('.login-form');
+// Memberikan event saat melakukan scroll pada halaman
+window.onscroll = () => {
+  // Hapus class "active" dari elemen navbar
+  navbar.classList.remove("active");
+};
 
-document.querySelector('#login-btn').onclick = () =>{
-  loginForm.classList.toggle('active');
-  navbar.classList.remove('active');
-}
-
-window.onscroll = () =>{
-  navbar.classList.remove('active');
-  loginForm.classList.remove('active');
-}
-
-var swiper = new Swiper(".review-slider",{
+// Membuat instance dari objek Swiper untuk slider review
+var swiper = new Swiper(".review-slider", {
   spaceBetween: 20,
   centeredSlides: true,
   grabCursor: true,
-  autoplay:{
+  autoplay: {
     delay: 7500,
     disableOnInteraction: false,
   },
